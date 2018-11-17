@@ -198,6 +198,14 @@ header nav li {
 	margin: 25px 0px;
 }
 
+/*Testimonials Section*/
+
+.testimonials .quote {
+	font-size: 22px;
+	font-weight: 300;
+	line-height: 1.5;
+	margin: 40px 0 25px;
+}
 
 
 
