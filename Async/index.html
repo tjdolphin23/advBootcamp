@@ -19,13 +19,77 @@
 // }
 // double(arr);
 
-var arr = [1,2,3,4,5,6];
-arr.forEach(function(number){
-	console.log(number * 2);
-});
+// *** For Each
+// var arr = [1,2,3,4,5,6];
+// arr.forEach(function(number){
+// 	console.log(number * 2);
+// });
+
+// function forEach(arr, callback){
+// 	for(var i = 0; i < arr.length; i++){
+// 		callback(arr[i], i, arr);
+// 	}
+// }
 
 
 
+// var arr = [3,4,6,2,1];
+// arr.findIndex (function(num, index, arr){
+// 	return num === 6;
+// });
+
+
+
+//Set Timeout Function
+setTimeout (function() {
+	console.log("Runs in approx. 200ms");
+}, 2000);
+
+
+//Cancel timeout
+
+var timerId = setTimeout(function(){
+	console.log("This function runs in 30 seconds");
+}, 30000);
+
+setTimeout (function(){
+	console.log("Canceling the first setTimeout", timerId);
+	clearTimeout(timerId)
+}, 2000);
+
+
+//Cancel setInterval
+
+var num = 0;
+var intervalId = setInterval(function(){
+	num++;
+	console.log("num: " + num);
+	if(num === 4) {
+		clearInterval(intervalId);
+	}
+}, 1000);
 
 </script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
