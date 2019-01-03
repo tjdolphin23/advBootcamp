@@ -94,17 +94,36 @@
 
 
 //Promise setTimeout
+// var promise = new Promise(function(resolve, reject){
+// 	setTimeout(function(){
+// 		var randomInt = Math.floor(Math.random() * 10);
+// 		resolve(randomInt);
+// 	}, 4000);
+// });
+
+// promise.then(function(data){
+// 	console.log("Random int passed to resolve:", data);
+// });
+
+
+//Promise Chaining
 var promise = new Promise(function(resolve, reject){
-	setTimeout(function(){
-		var randomInt = Math.floor(Math.random() * 10);
+	setTimeout(function() {
+		randomInt = Math.floor(Math.random() * 10);
 		resolve(randomInt);
-	}, 4000);
+	}, 500);
 });
 
 promise.then(function(data){
-	console.log("Random int passed to resolve:", data);
+	console.log("Random int pased to resolve:", data);
+	return new Promise(function(resolve, reject){
+		setTimeout(function(){
+			resolve(Math.floor(Math.random() * 10));
+		}, 3000);
+	});
+}).then(function(data) {
+	console.log("Second random in passed to resolve:", data);
 });
-
 
 
 
